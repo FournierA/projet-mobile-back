@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework import status
 
-from .models import Image
+from .models import Image, ImageSearch
 from .serializers import ImageSerializer
 
 # Create your views here.
@@ -37,3 +37,13 @@ class OneImageView(APIView):
         image = Image.objects.filter(id=pk)
         serializer = ImageSerializer(image, many=True)
         return Response({'image': serializer.data}, status=status.HTTP_200_OK)
+
+class SearchView(APIView):
+
+    def get(self, request, pk):
+        image = Image.objects.filter(id=pk)
+        search = ImageSearch(client=request.headers['User-Agent'])
+
+        
+
+        return Response(status=status.HTTP_200_OK)
