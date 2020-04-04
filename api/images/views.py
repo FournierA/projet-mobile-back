@@ -14,7 +14,8 @@ from cnn.query_online import get_result
 
 # Create your views here.
 
-# /images
+
+## /images
 # @post : permet d'upload une image provenant de l'application Android
 # @get : permet de retourner toutes les images qui ont été postées
 class ImagesView(APIView):
@@ -35,7 +36,8 @@ class ImagesView(APIView):
         return Response({'images': serializer.data}, status=status.HTTP_200_OK)
 
 
-# /images/<id>
+
+## /images/<id>
 # @get : permet de retourner une seule image via son <id> qui a été uploadée
 class OneImageView(APIView):
     # parser_class = (JSONParser)
@@ -46,7 +48,8 @@ class OneImageView(APIView):
         return Response({'images': serializer.data}, status=status.HTTP_200_OK)
 
 
-# /images/result
+
+## /images/result
 # @get : permet de retourner le top 5 des images CNN associée à la dernière image uploadée
 class ImagesResultView(APIView):
 

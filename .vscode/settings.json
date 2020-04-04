@@ -1,4 +1,10 @@
 {
-    "python.pythonPath": ".env/bin/python3.7",
+    "python.pythonPath": "C:\\Users\\Ryan\\AppData\\Local\\Programs\\Python\\Python37\\python.exe",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
     "git.ignoreLimitWarning": true
 }

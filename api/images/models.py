@@ -10,10 +10,8 @@ from api.settings import CNN_IMAGES_ROOT
 
 
 class Image(models.Model):
-    upload_storage = FileSystemStorage(
-        location=CNN_IMAGES_ROOT, base_url='/media/upload')
-    file = models.FileField(
-        upload_to='', storage=upload_storage, blank=False, null=False)
+    upload_storage = FileSystemStorage(location=CNN_IMAGES_ROOT, base_url='/media/upload')
+    file = models.FileField(upload_to='', storage=upload_storage, blank=False, null=False)
 
     def __str__(self):
         return self.file.name

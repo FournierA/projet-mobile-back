@@ -27,8 +27,6 @@ SECRET_KEY = '=scpk3lj#le2wn8j^!2+n4a*2ad#fsej%1joai55w-b=nc#p3d'
 DEBUG = True
 
 # Permet de récupérer l'adresse IP de l'utilisateur pour l'autoriser
-
-
 def get_ip():
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
     try:
@@ -63,7 +61,10 @@ MEDIA_URL = '/media/dataset-retr/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/dataset-retr")
 CNN_IMAGES_URL = '/media/upload/'
 CNN_IMAGES_ROOT = os.path.join(BASE_DIR, "media/upload")
+<< << << < HEAD
 
+== == == =
+>>>>>> > feat_cnn_in_django
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

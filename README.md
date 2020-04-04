@@ -1,4 +1,3 @@
-# projet-mobile-back
 # Clothes Detector - Procédure à suivre pour le démarrage
 
 ## Tout d'abord, téléchargez le fichier img.zip disponible sur le lien ci-dessous :
