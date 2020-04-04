@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
+import socket
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -25,7 +26,21 @@ SECRET_KEY = '=scpk3lj#le2wn8j^!2+n4a*2ad#fsej%1joai55w-b=nc#p3d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# Permet de récupérer l'adresse IP de l'utilisateur pour l'autoriser
+def get_ip():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        # doesn't even have to be reachable
+        s.connect(('10.255.255.255', 1))
+        IP = s.getsockname()[0]
+    except:
+        IP = '127.0.0.1'
+    finally:
+        s.close()
+    return IP
+
+
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", get_ip()]
 
 
 # Application definition
@@ -38,11 +53,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'images.apps.ImagesConfig'
+    'images.apps.ImagesConfig',
+    'cnn'
 ]
 
-MEDIA_URL =  '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = '/media/dataset-retr/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/dataset-retr")
+CNN_IMAGES_URL = '/media/upload/'
+CNN_IMAGES_ROOT = os.path.join(BASE_DIR, "media/upload")
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
