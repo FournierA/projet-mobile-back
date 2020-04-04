@@ -14,3 +14,4 @@ class ImageResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = ImageResult
         fields = '__all__'
+
