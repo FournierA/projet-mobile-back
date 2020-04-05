@@ -15,7 +15,12 @@ Une fois le fichier .zip décompressé, vous pouvez le supprimer !
 
 ## Init du projet, veuillez lancer la commande :
 
-```pip install -r requirements.txt```
+```
+- pip install virtualenv
+- virtualenv venv
+- venv\Scripts\activate
+- pip install -r requirements.txt
+```
 
 ## Démarrer le serveur, veuillez lancer la commande :
 
@@ -27,4 +32,4 @@ python manage.py runserver 0.0.0.0:8000
 
 ## Autres informations
 
-Si vous souhaitez relancer l'entraînement de l'IA, déplacez-vous d'abord dans le sous-dossier 'api/cnn' et lancez le fichier create_h5.py
+Si vous souhaitez relancer l'entraînement de l'IA, déplacez-vous d'abord dans le sous-dossier 'api/cnn' et lancez : ```python create_h5.py```

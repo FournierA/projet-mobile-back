@@ -1,20 +1,14 @@
-import os
-import sys
-import h5py
-import csv
-import numpy as np
 
+import csv
+
+import h5py
+import numpy as np
 from extract_cnn_vgg16_keras import VGGNet
-from PIL import Image
 
 '''
  Extract features and index the images
-'''
-'''
  Returns a list of filenames for all jpg images in a directory. 
 '''
-
-
 def get_imlist(path):
     with open(path, 'r') as f:
         first_column = [row[0] for row in csv.reader(f, delimiter=' ')]

@@ -1,26 +1,21 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals, absolute_import
 
-
+from cnn.query_online import get_result
 from rest_framework import status
-from rest_framework.parsers import FileUploadParser, JSONParser
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from .models import Image
 from .serializers import ImageSerializer, ImageResultSerializer
 
-from cnn.query_online import get_result
-
 
 # Create your views here.
-
 
 ## /images
 # @post : permet d'upload une image provenant de l'application Android
 # @get : permet de retourner toutes les images qui ont été postées
 class ImagesView(APIView):
-    #parser_class = (FileUploadParser, JSONParser)
 
     def post(self, request, *args, **kwargs):
         file_serializer = ImageSerializer(data=request.data)
@@ -41,7 +36,6 @@ class ImagesView(APIView):
 ## /images/<id>
 # @get : permet de retourner une seule image via son <id> qui a été uploadée
 class OneImageView(APIView):
-    # parser_class = (JSONParser)
 
     def get(self, request, pk):
         image = Image.objects.filter(id=pk)
