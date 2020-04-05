@@ -13,7 +13,7 @@ Une fois le fichier .zip décompressé, vous pouvez le supprimer !
 Vous trouverez un fichier feature.CNN.h5 <br/>
 Une fois le fichier .zip décompressé, vous pouvez le supprimer !
 
-## Init du projet, veuillez lancer la commande :
+## Init du projet, veuillez lancer les commandes suivantes :
 
 ```
 - pip install virtualenv
@@ -22,7 +22,7 @@ Une fois le fichier .zip décompressé, vous pouvez le supprimer !
 - pip install -r requirements.txt
 ```
 
-## Démarrer le serveur, veuillez lancer la commande :
+## Démarrer le serveur, veuillez lancer les commandes suivantes :
 
 ```
 cd api

@@ -41,7 +41,7 @@ def get_ip():
     return IP
 
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", get_ip()]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "10.0.2.2", get_ip()]
 
 
 # Application definition
